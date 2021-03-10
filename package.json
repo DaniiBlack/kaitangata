@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "deploy": "rm -rf ./public/* && cd vue && npm run build && cp -r dist/* ../public && cd .. && git add . && git commit -m 'build' && git push heroku main"
   },
   "keywords": [
     "heroku"

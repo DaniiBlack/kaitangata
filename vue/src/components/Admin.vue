@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import {api} from '../config';
 export default {
   name: 'Admin',
   data() {
@@ -54,7 +55,7 @@ export default {
   methods: {
       async onSubmit(){
           console.log("submit", this.formInput)
-          await fetch("https://still-hollows-12753.herokuapp.com/", {
+          await fetch(`${api}/wai`, {
             method:"POST", 
             body:JSON.stringify(this.formInput),
              headers: {

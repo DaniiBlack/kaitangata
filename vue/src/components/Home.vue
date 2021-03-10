@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import {api} from '../config';
 export default {
   name: 'Home',
   props: {
@@ -21,7 +22,7 @@ export default {
     }
   },
   async mounted() {
-    const result = await fetch("https://still-hollows-12753.herokuapp.com/")
+    const result = await fetch(`${api}/wai`)
     const json = await result.json()
     this.wai = json.wai
     console.log(this.wai);
