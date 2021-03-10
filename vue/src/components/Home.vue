@@ -1,9 +1,10 @@
 <template>
   <div class="home">
        <li v-for="item in wai" :key="item.title">
-          <p>Title: {{ item.title }} Date: {{item.date}}</p>
-          <p>Start: {{item.startTime}} End: {{item.endTime}}</p>
-          <p>Menu: {{item.menu}}</p>
+          <p>{{ item.title }}</p>
+          <p>{{ item.date }}</p>
+          <p>Startish: {{ item.startTime }} Endish: {{ item.endTime }}</p>
+          <p>Menu: {{ item.menu }}</p>
       </li>
   </div>
 </template>
@@ -20,7 +21,7 @@ export default {
     }
   },
   async mounted() {
-    const result = await fetch("http://localhost:3000/wai")
+    const result = await fetch("https://still-hollows-12753.herokuapp.com/")
     const json = await result.json()
     this.wai = json.wai
     console.log(this.wai);

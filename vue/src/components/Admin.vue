@@ -54,7 +54,7 @@ export default {
   methods: {
       async onSubmit(){
           console.log("submit", this.formInput)
-          await fetch("http://localhost:3000/wai", {
+          await fetch("https://still-hollows-12753.herokuapp.com/", {
             method:"POST", 
             body:JSON.stringify(this.formInput),
              headers: {

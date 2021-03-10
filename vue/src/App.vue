@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    Hello Dani
+    Woke Dumplings
     <router-view></router-view>
   </div>
 </template>
