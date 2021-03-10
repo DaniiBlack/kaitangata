@@ -52,8 +52,16 @@ export default {
       }
   },
   methods: {
-      onSubmit(){
+      async onSubmit(){
           console.log("submit", this.formInput)
+          await fetch("http://localhost:3000/wai", {
+            method:"POST", 
+            body:JSON.stringify(this.formInput),
+             headers: {
+              'Content-Type': 'application/json'
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+          })
       }
   }
 
