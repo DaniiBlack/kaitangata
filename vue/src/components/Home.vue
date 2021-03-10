@@ -1,15 +1,18 @@
 <template>
   <div class="home">
+    <h1>Kaitangata</h1>
        <li v-for="item in wai" :key="item.title">
+         <div class="divider"></div>
           <p>{{ item.title }}</p>
-          <p>{{ item.date }}</p>
-          <p>Startish: {{ item.startTime }} Endish: {{ item.endTime }}</p>
+          <p>{{ date(item.date) }}</p>
+          <p>Startish: {{ item.startTime }} Leaving: {{ item.endTime }}</p>
           <p>Menu: {{ item.menu }}</p>
       </li>
   </div>
 </template>
 
 <script>
+import Moment from 'moment'; 
 import {api} from '../config';
 export default {
   name: 'Home',
@@ -19,6 +22,11 @@ export default {
   data() {
     return {
       wai: []
+    }
+  },
+  methods:{
+    date(d){
+      return Moment(d).format("dddd Do MMMM")
     }
   },
   async mounted() {
@@ -35,4 +43,11 @@ export default {
   li {
     list-style-type: none;
   }
+  .divider {
+    height: 1px;
+    width: 57px;
+    background-color: aliceblue;
+    margin: 0 auto;
+  }
+
 </style>

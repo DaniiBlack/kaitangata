@@ -26,7 +26,7 @@
       
       <div class="field">
         <label class="label">Menu</label>
-        <input v-model="formInput.menu" type="text" class="input" name="menu">
+        <textarea v-model="formInput.menu" type="text" class="input" name="menu"></textarea>
       </div>
 
       <!-- submit button -->
