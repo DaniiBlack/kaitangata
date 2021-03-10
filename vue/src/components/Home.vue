@@ -5,14 +5,16 @@
          <div class="divider"></div>
           <p>{{ item.title }}</p>
           <p>{{ date(item.date) }}</p>
-          <p>Startish: {{ item.startTime }} Leaving: {{ item.endTime }}</p>
+          <p>Startish: {{ time(item.startTime) }} Leaving: {{ time(item.endTime) }}</p>
           <p>Menu: {{ item.menu }}</p>
       </li>
+      <img src="../assets/kai.octopus.jpg">
   </div>
 </template>
 
 <script>
-import Moment from 'moment'; 
+import Moment from 'moment';
+import convertTime from 'convert-time'; 
 import {api} from '../config';
 export default {
   name: 'Home',
@@ -26,7 +28,10 @@ export default {
   },
   methods:{
     date(d){
-      return Moment(d).format("dddd Do MMMM")
+      return Moment(d).format("dddd Do MMMM");
+    },
+    time(t){
+      return convertTime(t);
     }
   },
   async mounted() {
@@ -35,6 +40,7 @@ export default {
     this.wai = json.wai
     console.log(this.wai);
   }
+  
 }
 </script>
 
