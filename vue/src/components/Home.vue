@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    <h1>Kaitangata</h1>
-       <li v-for="item in wai" :key="item.title">
+    <h2>Kaitangata</h2>
+       <li class="event" v-for="item in wai" :key="item.title">
          <div class="divider"></div>
-          <p>{{ item.title }}</p>
+          <p class="eventTop">{{ item.title }}</p>
           <p>{{ date(item.date) }}</p>
           <p>Startish: {{ time(item.startTime) }} Leaving: {{ time(item.endTime) }}</p>
           <p>Menu: {{ item.menu }}</p>
+          <p class="eventBttm">Location: {{ item.location }} </p>
       </li>
-      <img src="../assets/kai.octopus.jpg">
   </div>
 </template>
 
@@ -54,6 +54,12 @@ export default {
     width: 57px;
     background-color: aliceblue;
     margin: 0 auto;
+  }
+  .eventTop {
+    margin-top: 27px;
+  }
+  .eventBttm {
+    margin-bottom: 27px;
   }
 
 </style>

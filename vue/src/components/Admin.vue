@@ -1,6 +1,6 @@
 <template>
   <div class="admin">
-    Where am I
+    Add a
     <form v-on:submit.prevent="onSubmit" id="AddWAI">
       <!-- name -->
       <div class="field">
@@ -29,6 +29,11 @@
         <textarea v-model="formInput.menu" type="text" class="input" name="menu"></textarea>
       </div>
 
+      <div class="field">
+        <label class="label">Location</label>
+        <textarea v-model="formInput.location" type="search"></textarea>
+      </div>
+
       <!-- submit button -->
       <div class="field has-text-right">
         <button type="submit" class="button is-danger">Submit</button>
@@ -49,7 +54,9 @@ export default {
             startTime:'',
             endTime:'',
             menu:'',
-        }
+            location:''
+        },
+        location:""
       }
   },
   methods: {
@@ -63,6 +70,9 @@ export default {
               // 'Content-Type': 'application/x-www-form-urlencoded',
             },
           })
+      },
+      async search(){
+        console.log(this.location);
       }
   }
 

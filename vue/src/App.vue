@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    Woke Dumplings
+    <img src="./assets/resist.jpg" class="resist">
+      <nav>
+        <ul class="nav">
+          <li class="navItem"><router-link to="/">Home</router-link></li>
+          <li class="navItem"><router-link to="gallery">Gallery</router-link></li>
+      </ul>
+    </nav>
+    <h1 class="wd">Woke Dumplings</h1>
     <router-view></router-view>
   </div>
 </template>
@@ -23,5 +30,24 @@ export default {
 }
 body {
     background-color: black;
+}
+.nav {
+  list-style-type: none;
+  margin-left: 100px;
+}
+.navItem {
+  display: inline;
+  padding: 5px;
+  float: left;
+}
+.wd {
+  clear: both;
+}
+.resist {
+  width: 95px;
+  height: 170px;
+  position: absolute;
+  left: 0px;
+  top: -20px;
 }
 </style>
